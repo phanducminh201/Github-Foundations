@@ -215,7 +215,7 @@ def evaluate_yolov8(dataset_path: str, class_names: list,
                 f"mAP50-95={map5095:.4f} | P={mp:.4f} | R={mr:.4f}")
     return results
 
-
+#Confusion matrix
 def _build_yolo_confusion_matrix(model, dataset_path, class_names, phase):
     import glob as _glob
     nc = len(class_names)
