@@ -1,0 +1,33 @@
+# ============================================================
+# Requirements — Biển Báo Giao Thông Detection
+# Install: pip install -r requirements.txt
+# PyTorch cài riêng theo CUDA version (xem README.md)
+# ============================================================
+
+# Core deep learning
+ultralytics>=8.0.0          # YOLOv8
+torchvision>=0.15.0         # Faster R-CNN, SSD
+torch>=2.0.0                # Base (cài theo CUDA riêng)
+
+# Data & visualization
+roboflow>=1.1.0             # Download dataset
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=9.5.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+pandas>=2.0.0
+
+# Metrics
+pycocotools>=2.0.6          # mAP chuẩn COCO
+scikit-learn>=1.3.0         # confusion matrix, F1
+
+# Config & logging
+pyyaml>=6.0
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+colorama>=0.4.6             # màu terminal Windows
+
+# Notebook (tuỳ chọn)
+jupyterlab>=4.0.0
+ipywidgets>=8.0.0

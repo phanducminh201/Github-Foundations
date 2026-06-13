@@ -1,0 +1,37 @@
+# ============================================================
+# Config — Faster R-CNN  (TUNED — Giai đoạn 5)
+# Thay đổi so với baseline:
+#   - trainable_backbone_layers: 3 → 5  (unfreeze nhiều layer hơn)
+#   - lr: 0.005 → 0.001                 (học chậm hơn, chính xác hơn)
+#   - epochs: 20 → 30                   (train lâu hơn)
+#   - lr_scheduler: StepLR → CosineAnnealingLR (mượt hơn)
+# ============================================================
+
+model:
+  name: fasterrcnn_resnet50_fpn
+  backbone: resnet50
+  pretrained: true
+  trainable_backbone_layers: 5       # tăng từ 3 → 5
+
+training:
+  epochs: 30                         # tăng từ 20 → 30
+  batch_size: 2
+  image_size: 512
+  optimizer: SGD
+  lr: 0.001                          # giảm từ 0.005 → 0.001
+  momentum: 0.9
+  weight_decay: 0.0001
+  lr_scheduler: CosineAnnealingLR    # đổi từ StepLR → Cosine
+  t_max: 30                          # bằng số epochs
+  gradient_clip: 1.0
+
+checkpoint:
+  save_best: true
+  save_last: true
+  save_period: 5
+  monitor: val_loss
+
+output:
+  project: runs/fasterrcnn
+  name: tuned
+  verbose: true

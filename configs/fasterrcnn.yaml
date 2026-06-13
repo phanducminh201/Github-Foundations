@@ -1,0 +1,33 @@
+# ============================================================
+# Config — Faster R-CNN ResNet50-FPN  (Baseline, trước Tuning)
+# ============================================================
+
+model:
+  name: fasterrcnn_resnet50_fpn
+  backbone: resnet50
+  pretrained: true
+  trainable_backbone_layers: 3   # số lớp backbone được unfreeze
+
+training:
+  epochs: 20
+  batch_size: 2                  # Faster R-CNN cần nhiều VRAM hơn
+  image_size: 512
+  optimizer: SGD
+  lr: 0.005
+  momentum: 0.9
+  weight_decay: 0.0001
+  lr_scheduler: StepLR
+  step_size: 10
+  gamma: 0.5                     # lr = lr * gamma mỗi step_size epoch
+  gradient_clip: 1.0             # clip gradient để tránh exploding
+
+checkpoint:
+  save_best: true
+  save_last: true
+  save_period: 5                 # lưu thêm mỗi 5 epoch (train ngắn hơn)
+  monitor: val_loss              # metric theo dõi để lưu best
+
+output:
+  project: runs/fasterrcnn
+  name: baseline
+  verbose: true

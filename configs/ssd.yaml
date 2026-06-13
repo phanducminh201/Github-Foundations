@@ -1,0 +1,31 @@
+# ============================================================
+# Config — SSD300 VGG16  (Baseline, trước Tuning)
+# ============================================================
+
+model:
+  name: ssd300_vgg16
+  backbone: vgg16
+  pretrained: true
+
+training:
+  epochs: 20
+  batch_size: 4
+  image_size: 300                # SSD chuẩn dùng 300x300
+  optimizer: SGD
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0005
+  lr_scheduler: CosineAnnealingLR
+  t_max: 20
+  gradient_clip: 1.0
+
+checkpoint:
+  save_best: true
+  save_last: true
+  save_period: 5
+  monitor: val_loss
+
+output:
+  project: runs/ssd
+  name: baseline
+  verbose: true

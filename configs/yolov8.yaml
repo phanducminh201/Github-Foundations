@@ -1,0 +1,32 @@
+# ============================================================
+# Config — YOLOv8n  (Baseline, trước Tuning)
+# ============================================================
+
+model:
+  name: yolov8n
+  variant: nano                  # nano | small | medium | large
+  pretrained: true
+
+training:
+  epochs: 50
+  batch_size: 8
+  image_size: 512
+  patience: 15                   # early stopping
+  optimizer: AdamW
+  lr0: 0.001                     # learning rate ban đầu
+  lrf: 0.01                      # lr cuối = lr0 * lrf
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 3
+  cls_loss_weight: 1.5           # tăng cls loss để xử lý imbalance
+
+checkpoint:
+  save_best: true                # lưu best.pt khi mAP cải thiện
+  save_last: true                # lưu last.pt mỗi epoch
+  save_period: 10                # lưu thêm checkpoint mỗi 10 epoch
+
+output:
+  project: runs/yolov8
+  name: baseline
+  plots: true
+  verbose: true
