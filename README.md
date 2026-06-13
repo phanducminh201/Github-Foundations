@@ -62,6 +62,7 @@ ROBOFLOW_VERSION=1
 ---
 
 ## Chạy dự án
+**Run the following command:
 
 ```bash
 # 1. Kiểm tra GPU và môi trường
