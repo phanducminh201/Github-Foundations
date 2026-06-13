@@ -62,6 +62,7 @@ ROBOFLOW_VERSION=1
 ---
 
 ## Chạy dự án
+**Run the following command:
 
 ```bash
 # 1. Kiểm tra GPU và môi trường
@@ -88,6 +89,7 @@ python scripts/evaluate.py
 ---
 
 ## Các lớp biển báo (10 lớp)
+**The project uses a Vietnamese Traffic Sign Dataset for object detection.
 
 | ID | Tên lớp | Mã biển |
 |---|---|---|
