@@ -149,6 +149,7 @@ class VoiceEngine:
         self._ready = False
 
 
+    #Hàm dọc biển báo
     def _speak_now(self, text: str):
         """Phát âm trực tiếp — gọi từ worker thread."""
         try:
