@@ -208,6 +208,7 @@ class VoiceEngine:
             self._queue.put(viet_name)
             logger.info(f"  🔊 Đọc: {viet_name}")
 
+    #Bật/tắt giọng đọc
     def toggle(self):
         self.enabled = not self.enabled
         logger.info(f"Giọng đọc: {'BẬT' if self.enabled else 'TẮT'}")
