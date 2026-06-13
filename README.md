@@ -1,5 +1,5 @@
 # Phát Hiện & Phân Loại Biển Báo Giao Thông Việt Nam
-**Deep Learning | Object Detection | YOLOv8 · Faster R-CNN · SSD**
+**Deep Learning | Object Detection | YOLOv8 · Faster R-CNN · SSD300**
 
 ---
 
