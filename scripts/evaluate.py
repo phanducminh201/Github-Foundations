@@ -460,7 +460,7 @@ def save_summary_table(all_results: dict, class_names: list,
         csv.writer(f).writerows(rows)
     logger.info(f"  Saved: {csv_path}")
 
-
+#Lưu báo cáo
 def save_text_report(all_results: dict, class_names: list,
                       phase: str = "baseline"):
     report_path = f"{EVAL_DIR}/evaluation_report_{phase}.txt"
@@ -598,7 +598,7 @@ def main():
         save_summary_table(all_results, class_names, phase=args.phase)
         save_text_report(all_results,   class_names, phase=args.phase)
 
-    logger.info(f"\n✅ Đánh giá [{phase_label}] hoàn tất! Xem kết quả: {EVAL_DIR}/")
+    logger.info(f"\n Đánh giá [{phase_label}] hoàn tất! Xem kết quả: {EVAL_DIR}/")
 
 
 if __name__ == "__main__":
