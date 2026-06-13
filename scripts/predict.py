@@ -299,7 +299,7 @@ def draw_detections(frame: np.ndarray, detections: list,
 
     return frame
 
-# Temporary experimental configuration
+
 def draw_overlay(frame: np.ndarray, fps: float, n_det: int,
                  voice_on: bool, paused: bool,
                  model_name: str) -> np.ndarray:
